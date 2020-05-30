@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { RouterModule } from '@angular/router';
 
-import { MatToolbarModule, MatToolbar } from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule,
 
     MatToolbarModule,
     MatButtonModule

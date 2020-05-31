@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
+import { SharedModule } from '../../shared/shared.module'
 import { PayrollRoutingModule } from './payroll-routing.module';
 import { PayrollComponent } from './payroll.component';
 
@@ -8,7 +8,7 @@ import { PayrollComponent } from './payroll.component';
 @NgModule({
   declarations: [PayrollComponent],
   imports: [
-    CommonModule,
+    SharedModule,
     PayrollRoutingModule
   ]
 })

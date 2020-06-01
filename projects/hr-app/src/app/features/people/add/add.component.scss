@@ -1,0 +1,21 @@
+
+.title-area {
+    display: flex;
+
+    h1 {
+        color: #3f51b5;
+    }
+}
+
+.spacer {
+    flex: 1 0 auto
+}
+
+mat-form-field {
+    width: 40%;
+    display: block;
+}
+
+button {
+    margin-right: 10px;
+}

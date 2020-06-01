@@ -1,0 +1,46 @@
+
+.title-area {
+    display: flex;
+
+    h1 {
+        color: #3f51b5;
+    }
+}
+
+.card {
+    margin: 15px;
+    border-radius: 10px;
+    border: 1.5px solid #3f51b5;
+    display: inline-flex;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+
+    .details {
+        padding-left: 10px;
+
+        h3 {
+            margin: 0 0 0px;
+            font-size: 20px;
+            color: #3f51b5;
+        }
+
+        h4 {
+            color: #555555;
+            margin: 0 0 0px;
+        }
+
+        p {
+            color: #767676;
+            margin: 0 0 0px;
+        }
+    }
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+
+.spacer {
+    flex: 1 0 auto
+}

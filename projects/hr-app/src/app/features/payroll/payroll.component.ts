@@ -12,7 +12,7 @@ import { PayrollService, PayrollData } from './payroll.service';
   styleUrls: ['./payroll.component.scss']
 })
 export class PayrollComponent implements OnInit {
-  displayedColumns: string[] = ['username', 'type', 'pay_rate', 'hours_worked', 'overtime_rate', 'overtime_hours', 'deductions', 'tax_rate', 'gross_pay', 'actions'];
+  displayedColumns: string[] = ['username', 'salary_type', 'pay_rate', 'hours_worked', 'overtime_rate', 'overtime_hours', 'deductions', 'tax_rate', 'gross_pay', 'actions'];
   // dataSource = new MatTableDataSource<PayrollData>(PAY_DATA);
   dataSource: MatTableDataSource<PayrollData>;
 
@@ -27,11 +27,12 @@ export class PayrollComponent implements OnInit {
 
   updateRow(data: PayrollData) {
     console.log(data)
+    this.payrollService.update(data).subscribe();
   }
 
   calcGrossPay(data: PayrollData):number {
     let gross_pay: number;
-    if (data.type == 'hourly') {
+    if (data.salary_type == 'hourly') {
       gross_pay = data.hours_worked * data.pay_rate + data.overtime_rate * data.overtime_hours * data.pay_rate - data.deductions;
     } else {
       gross_pay = (data.pay_rate / 12) + data.overtime_rate * data.overtime_hours * (data.pay_rate / (12*160)) - data.deductions;

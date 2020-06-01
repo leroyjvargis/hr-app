@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { BrowserModule } from '@angular/platform-browser';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { CoreRoutingModule } from './core-routing.module';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { LandingComponent } from './layout/landing/landing.component';
 
 @NgModule({
@@ -21,8 +22,8 @@ import { LandingComponent } from './layout/landing/landing.component';
   ],
   imports: [
     CommonModule,
-    // BrowserModule,
-    // BrowserAnimationsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     CoreRoutingModule,
 
     MatToolbarModule,

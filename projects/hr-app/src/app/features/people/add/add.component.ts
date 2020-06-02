@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
+import { Router } from '@angular/router';
 import { PeopleService } from '../people.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class AddComponent implements OnInit {
     start_date: new FormControl(''),
   });
 
-  constructor(private peopleService: PeopleService) { }
+  constructor(private peopleService: PeopleService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +28,7 @@ export class AddComponent implements OnInit {
   submitFn() {
     console.log(this.employeeForm.value)
     this.peopleService.add(this.employeeForm.value).subscribe();
+    this.router.navigate(['/people/list']);
   }
 
 }

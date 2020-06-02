@@ -19,16 +19,22 @@ export class AddComponent implements OnInit {
     department: new FormControl(''),
     start_date: new FormControl(''),
   });
+  showSuccess: boolean;
 
   constructor(private peopleService: PeopleService, private router: Router) { }
 
   ngOnInit(): void {
+    this.showSuccess = false;
   }
 
   submitFn() {
     console.log(this.employeeForm.value)
     this.peopleService.add(this.employeeForm.value).subscribe();
-    this.router.navigate(['/people/list']);
+    this.showSuccess = true;
+    setTimeout(() => {
+      this.showSuccess = false;
+    }, 5000);
+    // this.router.navigate(['/people/add']);
   }
 
 }

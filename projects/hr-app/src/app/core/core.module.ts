@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgHttpLoaderModule } from 'ng-http-loader'; 
 
 import { CoreRoutingModule } from './core-routing.module';
 
@@ -28,6 +29,7 @@ import { LandingComponent } from './layout/landing/landing.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgHttpLoaderModule.forRoot(),
     CoreRoutingModule,
 
     MatToolbarModule,

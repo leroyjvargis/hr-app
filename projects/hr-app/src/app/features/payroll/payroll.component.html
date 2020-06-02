@@ -1,9 +1,9 @@
 <section class="title-area">
     <h1>Payroll</h1>
     <span class="spacer"></span>
-    <!-- <div class="actions-bar">
-        <button mat-stroked-button color="primary" routerLink="/people/list"> < Back</button>
-    </div> -->
+    <div class="actions-bar">
+        <p> <button mat-stroked-button color="primary" (click)="updatePayPeriod('decrement')"> < </button> Pay period: {{currentPeriodString}} <button mat-stroked-button [disabled]="!showNextPeriodBtn" color="primary" (click)="updatePayPeriod('increment')"> > </button></p> 
+    </div>
 </section>
 
 

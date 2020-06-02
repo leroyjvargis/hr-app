@@ -25,12 +25,7 @@ export class PayrollService {
     console.log("Loaded payroll service")
   }
 
-  get() {
-    var d = new Date();
-    var month = d.getMonth() + 1;
-    var year = d.getFullYear();
-    var payPeriod = year + "-" + month;
-
+  get(payPeriod: string) {
     const url = environment.base_url + "payroll?payperiod=" + payPeriod;
     const httpOptions = {
       headers: new HttpHeaders({

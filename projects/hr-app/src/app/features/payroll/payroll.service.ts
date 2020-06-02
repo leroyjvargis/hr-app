@@ -31,7 +31,7 @@ export class PayrollService {
     var year = d.getFullYear();
     var payPeriod = year + "-" + month;
 
-    const url = "https://w73kurtrje.execute-api.us-east-1.amazonaws.com/beta-api/payroll?payperiod="+payPeriod;
+    const url = environment.base_url + "payroll?payperiod=" + payPeriod;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -41,7 +41,7 @@ export class PayrollService {
   }
 
   update(data: PayrollData) {
-    const url = "https://w73kurtrje.execute-api.us-east-1.amazonaws.com/beta-api/payroll";
+    const url = environment.base_url + "payroll";
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',

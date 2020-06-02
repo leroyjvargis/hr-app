@@ -29,11 +29,13 @@ export class AddComponent implements OnInit {
 
   submitFn() {
     console.log(this.employeeForm.value)
-    this.peopleService.add(this.employeeForm.value).subscribe();
-    this.showSuccess = true;
-    setTimeout(() => {
-      this.showSuccess = false;
-    }, 5000);
+    this.peopleService.add(this.employeeForm.value).subscribe(data => {
+      this.showSuccess = true;
+      setTimeout(() => {
+        this.showSuccess = false;
+      }, 5000);
+    });
+    
     // this.router.navigate(['/people/add']);
   }
 

@@ -1,4 +1,5 @@
-.sidenav {
+@media (min-width: 500px) {
+  .sidenav {
     height: 100%; 
     width: 200px; 
     position: fixed;
@@ -31,5 +32,10 @@
   .sidenav a:hover {
     color: #2f40a3;
   }
+}
 
-  
+@media (max-width: 499px) {
+  .sidenav {
+    display: none;
+  }
+}

@@ -1,3 +1,15 @@
 .spacer {
     flex: 1 0 auto
 }
+
+@media(min-width: 500px) {
+    .sidebar-menu {
+        display: none;
+    }
+}
+
+@media(max-width: 499px) {
+    .sidebar-menu {
+        display: block;
+    }
+}

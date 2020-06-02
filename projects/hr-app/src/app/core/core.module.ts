@@ -8,6 +8,8 @@ import { CoreRoutingModule } from './core-routing.module';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -29,7 +31,9 @@ import { LandingComponent } from './layout/landing/landing.component';
     CoreRoutingModule,
 
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule
   ],
 })
 export class CoreModule { }

@@ -2,5 +2,12 @@
     HR App
 
     <span class="spacer"></span>
+    <mat-menu #appMenu="matMenu">
+        <button mat-menu-item routerLink="/dashboard">Dashboard</button>
+        <button mat-menu-item routerLink="/people">People</button>
+        <button mat-menu-item routerLink="/payroll">Payroll</button>
+    </mat-menu>
+
+    <button class="sidebar-menu" mat-flat-button color="primary" [matMenuTriggerFor]="appMenu"><mat-icon>menu</mat-icon></button>
     <button mat-flat-button color="primary" routerLink="/home">Logout</button>
 </mat-toolbar>

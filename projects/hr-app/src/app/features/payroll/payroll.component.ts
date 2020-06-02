@@ -15,6 +15,10 @@ export class PayrollComponent implements OnInit {
   displayedColumns: string[] = ['username', 'salary_type', 'pay_rate', 'hours_worked', 'overtime_rate', 'overtime_hours', 'deductions', 'tax_rate', 'gross_pay', 'actions'];
   // dataSource = new MatTableDataSource<PayrollData>(PAY_DATA);
   dataSource: MatTableDataSource<PayrollData>;
+  currentPeriod: string;
+  currentPeriodString: string;
+  currentPeriodDate: Date;
+  showNextPeriodBtn: boolean;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -22,6 +26,15 @@ export class PayrollComponent implements OnInit {
   constructor(private payrollService: PayrollService) { }
 
   ngOnInit(): void {
+    this.currentPeriodDate = new Date();
+    this.currentPeriodString = this.currentPeriodDate.toLocaleString('default', {month: 'long'}) + ' ' + this.currentPeriodDate.getFullYear().toString();
+    this.showNextPeriodBtn = false;
+
+    var d = new Date();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    this.currentPeriod = year + "-" + month;
+
     this.refreshData();
   }
 
@@ -44,13 +57,31 @@ export class PayrollComponent implements OnInit {
   }
 
   refreshData() {
-    this.payrollService.get().subscribe(data => {
+    this.payrollService.get(this.currentPeriod).subscribe(data => {
       data = data.map(v => ({...v, mode: 'list'}));
       this.dataSource = new MatTableDataSource();
       this.dataSource.data = data;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
+  }
+
+  updatePayPeriod(mode: string) {
+    if (mode == 'decrement') {
+      this.currentPeriodDate.setMonth(this.currentPeriodDate.getMonth()-1);
+      this.currentPeriodString = this.currentPeriodDate.toLocaleString('default', {month: 'long'}) + ' ' + this.currentPeriodDate.getFullYear().toString();
+      this.showNextPeriodBtn = true;
+      this.currentPeriod = this.currentPeriodDate.getFullYear().toString() + "-" + (this.currentPeriodDate.getMonth() + 1);
+    } else {
+      this.currentPeriodDate.setMonth(this.currentPeriodDate.getMonth() + 1);
+      this.currentPeriodString = this.currentPeriodDate.toLocaleString('default', {month: 'long'}) + ' ' + this.currentPeriodDate.getFullYear().toString();
+      var today = new Date();
+      if (this.currentPeriodDate.getMonth() == today.getMonth()) {
+        this.showNextPeriodBtn = false;
+      }
+      this.currentPeriod = this.currentPeriodDate.getFullYear().toString() + "-" + (this.currentPeriodDate.getMonth() + 1);
+    }
+    this.refreshData();
   }
 
 }

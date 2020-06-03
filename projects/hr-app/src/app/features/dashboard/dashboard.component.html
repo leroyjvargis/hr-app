@@ -1,0 +1,35 @@
+<section class="title-area">
+    <h1>Dashboard</h1>
+    <span class="spacer"></span>
+    <!-- <div class="actions-bar">
+        <button mat-stroked-button color="primary" routerLink="/people/list"> < Back</button>
+    </div> -->
+</section>
+
+<section>
+    <article class="card">
+        <div class="main">
+            <div class="pic">
+                <mat-icon>people_alt</mat-icon>
+            </div>
+            <span class="spacer"></span>
+            <div class="details">
+                <h2>{{ dashboardData?.employeeCount}}</h2>
+                <h4>Employees</h4>
+            </div>
+        </div>        
+    </article>
+
+    <article class="card">
+        <div class="main">
+            <div class="pic">
+                <mat-icon>attach_money</mat-icon>
+            </div>
+            <span class="spacer"></span>
+            <div class="details">
+                <h2>${{ dashboardData?.averagePay}}</h2>
+                <h4>Average gross pay</h4>
+            </div>
+        </div>        
+    </article>
+</section>

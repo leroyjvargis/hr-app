@@ -1,0 +1,12 @@
+@media (min-width: 500px) {
+    main {
+        margin-left: 200px;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 499px) {
+    main {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,46 @@
+.title-area {
+    display: flex;
+
+    h1 {
+        color: #3f51b5;
+    }
+}
+
+.spacer {
+    flex: 1 0 auto;
+}
+
+.card {
+    margin: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: inline-block;
+    width: 250px;
+
+    .main {
+        display: flex;
+
+        .pic {
+            mat-icon {
+                font-size: 4em;
+                color: #3f51b5;
+            }
+        }
+
+        .details {
+            padding-left: 10px;
+            text-align: right;
+
+            h2 {
+                margin: 0 0 0px;
+                font-size: 40px;
+                color: #3f51b5;
+            }
+
+            h4 {
+                color: #555555;
+                margin: 0 0 0px;
+            }
+        }
+    }
+}

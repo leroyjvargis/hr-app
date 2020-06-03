@@ -1,0 +1,70 @@
+<section class="title-area">
+    <h1>Add new employee</h1>
+    <span class="spacer"></span>
+    <div class="actions-bar">
+        <button mat-stroked-button color="primary" routerLink="/people/list"> < Back</button>
+    </div>
+</section>
+
+
+<form [formGroup]='employeeForm' (ngSubmit)="submitFn()" #addForm="ngForm">
+
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstname" required>
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastname" required>
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required>
+        <mat-icon matSuffix>email</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone" required>
+        <mat-icon matSuffix>call</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Position</mat-label>
+        <input matInput formControlName="position" required>
+        <mat-icon matSuffix>engineering</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Department</mat-label>
+        <input matInput formControlName="department" required>
+        <mat-icon matSuffix>domain</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Start date</mat-label>
+        <input matInput formControlName="start_date" required>
+        <mat-icon matSuffix>date_range</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    
+
+    <button mat-flat-button type="submit" color="primary" [disabled]="!addForm.form.valid">Submit</button>
+    <button mat-stroked-button type="reset" color="primary">Reset</button>
+    
+
+</form>
+
+<section class="card" *ngIf="showSuccess">
+    Success!
+</section>

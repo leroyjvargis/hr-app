@@ -1,0 +1,40 @@
+
+.title-area {
+    display: flex;
+
+    h1 {
+        color: #3f51b5;
+    }
+}
+
+.spacer {
+    flex: 1 0 auto
+}
+
+@media (min-width: 750px) {
+    mat-form-field {
+        width: 40%;
+        display: block;
+    }
+}
+
+@media (max-width: 749px) {
+    mat-form-field {
+        width: 80%;
+        display: block;
+    }
+}
+
+
+button {
+    margin-right: 10px;
+}
+
+.card {
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 158, 53, 0.2), 0 6px 20px 0 rgba(0, 173, 58, 0.19);
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}

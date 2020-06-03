@@ -1,0 +1,41 @@
+@media (min-width: 500px) {
+  .sidenav {
+    height: 100%; 
+    width: 200px; 
+    position: fixed;
+    z-index: 1; 
+    // top: 0; 
+    left: 0;
+    background-color: #f7f7f7; 
+    overflow-x: hidden; 
+    padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 16px 10px 16px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #3f51b5;
+    display: block;
+    cursor: pointer;
+
+    &.active {
+        // color: #f7f7f7;
+        // background-color: #067e8a;
+        filter: brightness(120%);
+        text-decoration: dashed !important;
+    }
+
+  }
+  
+  .sidenav a:hover {
+    color: #2f40a3;
+  }
+}
+
+@media (max-width: 499px) {
+  .sidenav {
+    display: none;
+  }
+}

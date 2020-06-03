@@ -1,0 +1,27 @@
+.main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/backdrop.jpg);
+    background-size: cover;
+    width: 100%;
+    min-height: 700px;
+    position:relative;
+}
+
+.inner {
+    width: 284px;
+    height: 290px;
+    position:absolute;
+    top: 50%;
+    left:50%;
+    margin-top: -147px;
+    margin-left: -144px;
+    text-align: center;
+
+    h4 {
+        color: white;
+        font-size: 60px;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+}
